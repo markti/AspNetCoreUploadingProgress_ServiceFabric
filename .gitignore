@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/AspNetCoreUploadingProgress_ServiceFabric/v15
+/.vs
+/packages/Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.2
+/ServiceFabricUploader/pkg/Debug
+/ServiceFabricUploader/obj/x64/Debug
+/StatefulWebUpload/bin
+/StatefulWebUpload/obj
