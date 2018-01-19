@@ -5,11 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace StatefulWebUpload
 {
-  public class HomeController : Controller
-  {
-    public ActionResult Index()
+    [Route("")]
+    public class HomeController : Controller
     {
-      return this.View();
+        public ActionResult Index()
+        {
+            return this.View();
+        }
     }
-  }
 }

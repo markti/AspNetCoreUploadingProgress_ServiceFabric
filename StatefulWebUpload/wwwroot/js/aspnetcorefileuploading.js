@@ -10,32 +10,50 @@ function uploadFiles(inputId) {
     formData.append("files", files[i]);
   }
 
-  startUpdatingProgressIndicator();
   $.ajax(
-    {
-      url: "./uploader",
-      data: formData,
-      processData: false,
-      contentType: false,
-      type: "POST",
-      success: function (data) {
-        stopUpdatingProgressIndicator();
-        alert("Files Uploaded!");
+      {
+          url: "./uploader",
+          data: formData,
+          processData: false,
+          contentType: false,
+          type: "GET",
+          success: function (id) {
+
+              alert(id);
+              startUpdatingProgressIndicator(id);
+              var url = "./uploader/" + id;
+
+              $.ajax(
+                  {
+                      url: url,
+                      data: formData,
+                      processData: false,
+                      contentType: false,
+                      type: "POST",
+                      success: function (data) {
+                          stopUpdatingProgressIndicator();
+                          alert("Files Uploaded!");
+                      }
+                  }
+              );
+          }
       }
-    }
   );
+
 }
 
 var intervalId;
 
-function startUpdatingProgressIndicator() {
-  $("#progress").show();
+function startUpdatingProgressIndicator(id) {
+    $("#progress").show();
+
+    var url = "./uploader/" + id + "/progress";
 
   intervalId = setInterval(
     function () {
       // We use the POST requests here to avoid caching problems (we could use the GET requests and disable the cache instead)
       $.post(
-        "./uploader/progress",
+        url,
         function (progress) {
           $("#bar").css({ width: progress + "%" });
           $("#label").html(progress + "%");

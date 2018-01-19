@@ -4,10 +4,16 @@
     <Parameter Name="StatefulWebUpload_MinReplicaSetSize" DefaultValue="3" />
     <Parameter Name="StatefulWebUpload_PartitionCount" DefaultValue="1" />
     <Parameter Name="StatefulWebUpload_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FileUploadActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="FileUploadActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FileUploadActorService_TargetReplicaSetSize" DefaultValue="3" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="FileUploadActorPkg" ServiceManifestVersion="1.0.0" />
+  </ServiceManifestImport>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="StatefulWebUploadPkg" ServiceManifestVersion="1.0.0" />
     <ConfigOverrides />
@@ -21,6 +27,11 @@
     <Service Name="StatefulWebUpload" ServicePackageActivationMode="ExclusiveProcess">
       <StatefulService ServiceTypeName="StatefulWebUploadType" TargetReplicaSetSize="[StatefulWebUpload_TargetReplicaSetSize]" MinReplicaSetSize="[StatefulWebUpload_MinReplicaSetSize]">
         <UniformInt64Partition PartitionCount="[StatefulWebUpload_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="FileUploadActorService" GeneratedIdRef="a2654c3d-d61d-4312-91a9-eb56c75e2f94|Persisted">
+      <StatefulService ServiceTypeName="FileUploadActorServiceType" TargetReplicaSetSize="[FileUploadActorService_TargetReplicaSetSize]" MinReplicaSetSize="[FileUploadActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[FileUploadActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
       </StatefulService>
     </Service>
   </DefaultServices>

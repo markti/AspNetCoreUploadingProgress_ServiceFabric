@@ -7,6 +7,10 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ServiceFabricUploader", "Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatefulWebUpload", "StatefulWebUpload\StatefulWebUpload.csproj", "{95655D68-4F47-4445-923C-21DFAFDE7DF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadActor", "FileUploadActor\FileUploadActor.csproj", "{5DC4C6B5-9A67-455F-BEFE-CF6937A46BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadActor.Interfaces", "FileUploadActor.Interfaces\FileUploadActor.Interfaces.csproj", "{23BE4CE0-5FDC-455D-9534-E4EF8DA5A665}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,18 @@ Global
 		{95655D68-4F47-4445-923C-21DFAFDE7DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95655D68-4F47-4445-923C-21DFAFDE7DF6}.Release|x64.ActiveCfg = Release|Any CPU
 		{95655D68-4F47-4445-923C-21DFAFDE7DF6}.Release|x64.Build.0 = Release|Any CPU
+		{5DC4C6B5-9A67-455F-BEFE-CF6937A46BD8}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{5DC4C6B5-9A67-455F-BEFE-CF6937A46BD8}.Debug|x64.ActiveCfg = Debug|x64
+		{5DC4C6B5-9A67-455F-BEFE-CF6937A46BD8}.Debug|x64.Build.0 = Debug|x64
+		{5DC4C6B5-9A67-455F-BEFE-CF6937A46BD8}.Release|Any CPU.ActiveCfg = Release|x64
+		{5DC4C6B5-9A67-455F-BEFE-CF6937A46BD8}.Release|x64.ActiveCfg = Release|x64
+		{5DC4C6B5-9A67-455F-BEFE-CF6937A46BD8}.Release|x64.Build.0 = Release|x64
+		{23BE4CE0-5FDC-455D-9534-E4EF8DA5A665}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{23BE4CE0-5FDC-455D-9534-E4EF8DA5A665}.Debug|x64.ActiveCfg = Debug|x64
+		{23BE4CE0-5FDC-455D-9534-E4EF8DA5A665}.Debug|x64.Build.0 = Debug|x64
+		{23BE4CE0-5FDC-455D-9534-E4EF8DA5A665}.Release|Any CPU.ActiveCfg = Release|x64
+		{23BE4CE0-5FDC-455D-9534-E4EF8DA5A665}.Release|x64.ActiveCfg = Release|x64
+		{23BE4CE0-5FDC-455D-9534-E4EF8DA5A665}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

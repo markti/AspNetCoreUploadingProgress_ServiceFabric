@@ -9,3 +9,8 @@
 /ServiceFabricUploader/obj/x64/Debug
 /StatefulWebUpload/bin
 /StatefulWebUpload/obj
+/FileUploadActor/bin/x64/Debug
+/FileUploadActor/obj/x64/Debug
+/FileUploadActor.Interfaces/bin/x64/Debug
+/FileUploadActor.Interfaces/obj/x64/Debug
+/packages

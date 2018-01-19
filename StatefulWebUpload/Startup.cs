@@ -11,8 +11,6 @@ namespace StatefulWebUpload
 {
     public class Startup
     {
-        // This is not the best idea to use a static variable (especially when you have more than one active uploading session at the same time)
-        public static int Progress { get; set; }
 
         public Startup(IConfiguration configuration)
         {
@@ -41,8 +39,8 @@ namespace StatefulWebUpload
             {
                 app.UseExceptionHandler("/Error");
             }
-            
-            app.UseMvcWithDefaultRoute();
+
+            app.UseMvc();
         }
     }
 }
